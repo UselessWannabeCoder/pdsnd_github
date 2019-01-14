@@ -2,8 +2,15 @@ import time
 import pandas as pd
 import numpy as np
 
+<<<<<<< HEAD
 #I like ham sandwiches
 
+||||||| merged common ancestors
+=======
+#No really, I like ham sandwiches.
+#Downloaded more RAM, bro. It runs faster now.
+
+>>>>>>> refactoring
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
