@@ -1,6 +1,8 @@
 ### NOTE
 I did this in the first section of the Git final project, so I am adding this note to have something to change for Section 2.
 
+Also, I like ham sandwiches.
+
 ### Date created
 This project was created on 1/4/2019
 

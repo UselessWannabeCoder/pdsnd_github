@@ -2,6 +2,8 @@ import time
 import pandas as pd
 import numpy as np
 
+#I like ham sandwiches
+
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -15,18 +17,18 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')    
-    
+    print('Hello! Let\'s explore some US bikeshare data!')
+
     city = 0
     month = 0
     day = 0
-    
+
     city = input('Pick the city you would like to analyze: Chicago, New York City, or Washington.\n').lower()
-        
+
     while city not in ['chicago','new york city','washington']:
         city = input('Pick the city you would like to analyze: Chicago, New York City, or Washington.\n').lower()
-   
-   
+
+
     month = input('Enter the month you would like to analyze, or type "all" for no filter.\n').lower()
     while month not in ['january','february','march','april','may','june','all']:
             month = input('Enter the month you would like to analyze, or type "all" for no filter.\n').lower()
@@ -35,7 +37,7 @@ def get_filters():
     day = input('Enter the day you would like to filter by, or type "all" for no filter.\n').lower()
     while day not in ['monday','tuesday','wednesday','thursday','friday','saturday','sunday','all']:
             day = input('Enter the day you would like to filter by, or type "all" for no filter.\n').lower()
-        
+
     print('-'*40)
     return city, month, day
 
@@ -58,14 +60,14 @@ def load_data(city, month, day):
         monthnum = months.index(month.lower())+1
         df['Month'] = pd.DatetimeIndex(df['Start Time']).month
         df = df[df['Month']==monthnum]
-    
+
     if day != 'all':
         #Converts their given weekday to a number
         weekdays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
         daynum = weekdays.index(day.capitalize())
         df['Weekday'] = pd.DatetimeIndex(df['Start Time']).weekday
         df = df[df['Weekday']==daynum]
-    
+
     return df
 
 
@@ -134,13 +136,13 @@ def trip_duration_stats(df):
     #The datetime subtraction creates a time delta which must be converted to a string to properly display.
     a = str(df['Calc'].sum(axis=0))
     print('The total travel time is: {}'.format(a))
-    
+
     #  display mean travel time
     a = df['Calc'].mean()
     def days_hours_minutes(td):
         return td.days, td.seconds//3600, (td.seconds//3600)//60, (td.seconds%3600)%60
     d, h, m, s = days_hours_minutes(a)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -154,18 +156,18 @@ def user_stats(df):
     #  Display counts of user types
     a = df['User Type'].value_counts()
     print('Here is the count of user types: {}'.format(a))
-    
+
     #  Display counts of gender
     a = df['Gender'].value_counts()
-    print('Here is the count of user genders:\n Male: {}\n Female: {}'.format(a[0],a[1]))    
+    print('Here is the count of user genders:\n Male: {}\n Female: {}'.format(a[0],a[1]))
 
     #  Display earliest, most recent, and most common year of birth
     a = df['Birth Year'].min()
     print('The oldest user was born in: {}'.format(int(a)))
-    
+
     a = df['Birth Year'].max()
     print('The youngest user was born in: {}'.format(int(a)))
-    
+
     a = df['Birth Year'].mode()
     print('The most common birth year is: {}'.format(int(a)))
 
@@ -175,7 +177,7 @@ def user_stats(df):
 def raw_prompt(df):
     """Prompts user if they would like to see raw data"""
     i = [0,5]
-    while True:    
+    while True:
         print('\n' +'-'*40)
         rawprompt = input('Would you like to read 5 more lines of raw data based on your filters? Enter yes or no.\n')
         if rawprompt.lower() == 'no':
