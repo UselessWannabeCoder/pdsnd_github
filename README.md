@@ -5,7 +5,7 @@ I did this in the first section of the Git final project, so I am adding this no
 This project was created on 1/4/2019
 
 ### Project Title
-Udacity Bikeshare Final project
+Udacity Bikeshare Final Project
 
 ### Description
 This project applied Python's data analysis tools to a bikeshare company's data in three different cities.
