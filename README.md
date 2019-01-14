@@ -1,15 +1,14 @@
 ### Date created
-Include the date you created this project and README file.
+This project was created on 1/4/2019
 
 ### Project Title
-Replace the Project Title
+Udacity Bikeshare Final project
 
 ### Description
-Describe what your project is about and what it does
+This project applied Python's data analysis tools to a bikeshare company's data in three different cities.
 
 ### Files used
-Include the files used
+bikeshare.py, new_york_city.csv, washington.csv, and chicago.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Utilized StackOverflow, pandas.pydata.org,https://docs.scipy.org/doc/numpy-1.15.0/reference/routines.sort.html,https://docs.scipy.org/doc/numpy-1.15.1/reference/routines.statistics.html,https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/, and docs.python.org
